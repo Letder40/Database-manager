@@ -103,6 +103,26 @@ if(!empty($table)){
                                         <div class="answer">' . $data[$index - 1]["pregunta$i"] . '</div>
                                     </div>';
                             }
+                        }else{
+
+                            $stmt = $conn->prepare("select column_name from information_schema.columns where table_name = '$table' and table_schema = 'ssencuesta'");
+                            $stmt->execute();
+                            $columns = $stmt->fetchAll();
+                            
+                            $columns_name = [];
+                            for($i=0;$i<count($columns);$i++){
+                                $column_name = $columns[$i][0];
+                                if($column_name == "id"){
+                                    continue;
+                                }
+                                array_push($columns_name, $column_name);
+                            }
+                            for($i=0;$i<count($columns_name);$i++){
+                                echo '<div class="show-block">
+                                        <div class="question">' . "columna ->" . $columns_name[$i] . " :" . '</div>
+                                        <div class="answer">' . "valor -> " . $data[$index - 1][$columns_name[$i]] . '</div>
+                                    </div>';
+                            }
                         }
                     }
                 echo "</div>";
