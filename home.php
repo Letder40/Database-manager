@@ -71,7 +71,7 @@ if(!empty($table)){
                     $index = $_GET["index"];
                     if(empty($index)){
                          for($i=1;$i<=count($data);$i++){
-                            echo "<a href='home.php?index=$i&id=1&table=$table'><div class='show-object default-flex'>tabla $table fila $i</div></a>";
+                            echo "<a href='home.php?index=$i&id=1&table=$table'><div class='show-object default-flex'>Fila - $i</div></a>";
                         }
                     }else{
                         if($table == "diabetes"){
@@ -97,6 +97,7 @@ if(!empty($table)){
                                 19 => '¿Se siente temeroso o inseguro con la diabetes?',
                                 20 => '¿Y grupal?'
                             ];
+
                             for($i=1;$i<=count($questions);$i++){
                                 echo '<div class="show-block">
                                         <div class="question">' . $questions[$i] . '</div>
