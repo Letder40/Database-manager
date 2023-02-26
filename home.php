@@ -43,7 +43,7 @@ if(!empty($table)){
             <a id="nav-object" class="default-flex" href="home.php" >Home</a>
             <a id="nav-object" class="default-flex" href="home.php?id=1&table=<?php echo $table ?>" >Show data</a>
             <a id="nav-object" class="default-flex" href="home.php?id=2&table=<?php echo $table ?>" >Add data</a>
-            <a id="nav-object" class="default-flex" href="home.php?id=3&table=<?php echo $table ?>" >Add user</a>
+            <a id="nav-object" class="default-flex" href="add_user.php" >Add user</a>
             
         </nav>
 
